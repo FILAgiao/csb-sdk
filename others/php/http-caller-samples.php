@@ -8,14 +8,22 @@
         echo "<br>PHP SDK Usage to invoke http-API provided by CSB:";
            
         echo "<hr>";
-        $url =  "http://11.239.187.178:8086/httpjson";
-        $data = array('name'=>'wiseking', 'age'=>'100','title'=>'god');
-       
-        $api =  "httpjson"; 
-        $version = '1.0.0';
-        
+        // java集成包里的地址
+        $url =  "http://41.190.17.18:8086/CSB";
+        // 和民警注册应用时生成的requestId和ak,sk
+        $requestId ="***************";
         $ak = 'ak'; 
         $sk = 'sk';
+        // 版本就是1.0.0,不用变。
+        
+        $version = '1.0.0';
+        // java集成包里的各个方法的服务标识
+        $api =  "ST_JWZH_DEPT_001"; 
+        //java集成包里的各个方法的xml输入参数
+        $ndata  =  '<?xml version="1.0" encoding="utf-8"?><DATAS><REQUESTID>'.$requestId.'</REQUESTID><BEGINID>1</BEGINID><MAXROWS>10</MAXROWS></DATAS>';
+
+        // data赋值
+        $data = array('inxml'=>$ndata);
         
        echo '<br>';
        
